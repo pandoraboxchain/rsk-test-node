@@ -1,0 +1,10 @@
+FROM node:9-alpine
+
+RUN apk add --no-cache --virtual -y git
+RUN git clone https://github.com/rsksmart/utilities.git rst-utilities
+
+WORKDIR /rst-utilities/console
+RUN ls -a
+RUN npm i --quiet
+
+ENTRYPOINT node console.js -server 0.0.0.0:4444

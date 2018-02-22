@@ -1,0 +1,22 @@
+{
+  "name": "rsk-test-node",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Container with RSK node and tools",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "docker-compose build --no-cache",
+    "start": "docker-compose up -d --remove-orphans",
+    "stop": "docker-compose down",
+    "console": "docker run --net=host --rm -ti local_rsk_console"
+  },
+  "keywords": [
+    "rsk",
+    "rskj",
+    "ethereum",
+    "smart-contract",
+    "docker"
+  ],
+  "author": "Kostiantyn Smyrnov <kostysh@gmail.com>",
+  "license": "MIT"
+}
