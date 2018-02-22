@@ -6,7 +6,12 @@ Container with RSK node and tools
 - Install Docker
 - Install Docker compose
 
-## Run RSK RegTest
+## Build (re-build) RSK node and console containers
+```sh
+npm run build
+```
+
+## Run node
 ```sh
 npm start
 ```
@@ -21,7 +26,7 @@ An interactive console will opens:
 RSK >
 ```
 
-## Stop RSK RegTest
+## Stop RSK node
 ```sh
 npm stop
 ```
