@@ -7,4 +7,4 @@ WORKDIR /rst-utilities/console
 RUN ls -a
 RUN npm i --quiet
 
-ENTRYPOINT node console.js -server 0.0.0.0:4444
+ENTRYPOINT node console.js -server localhost:4444

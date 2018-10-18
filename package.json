@@ -5,16 +5,15 @@
   "description": "Container with RSK node and tools",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "docker-compose build --no-cache",
-    "start": "docker-compose up -d --remove-orphans",
-    "stop": "docker-compose down",
-    "console": "docker run --net=host --rm -ti local_rsk_console"
+    "build": "docker build --no-cache -t testnet -f Dockerfile.TestNet . && docker build -t rskconsole -f Dockerfile.Console .",
+    "start": "docker run -d --rm --name rsk-testnode-01 -p 4444:4444 -p 4445:4445 -p 50505:50505 testnet",
+    "stop": "docker stop rsk-testnode-01",
+    "console": "docker run --network host --rm -ti rskconsole"
   },
   "keywords": [
     "rsk",
     "rskj",
     "ethereum",
-    "smart-contract",
     "docker"
   ],
   "author": "Kostiantyn Smyrnov <kostysh@gmail.com>",
