@@ -1,12 +1,13 @@
 {
   "name": "rsk-test-node",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Container with RSK node and tools",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "docker build --no-cache -t testnet -f Dockerfile.TestNet . && docker build -t rskconsole -f Dockerfile.Console .",
-    "start": "docker run -d --rm --name rsk-testnode-01 -p 4444:4444 -p 4445:4445 -p 50505:50505 testnet",
+    "build": "docker build -t testnet -f Dockerfile.TestNet . && docker build -t rskconsole -f Dockerfile.Console .",
+    "start": "docker run --rm --name rsk-testnode-01 -p 4444:4444 -p 4445:4445 -p 50505:50505 testnet",
+    "start:d": "docker run -d --rm --name rsk-testnode-01 -p 4444:4444 -p 4445:4445 -p 50505:50505 testnet",
     "stop": "docker stop rsk-testnode-01",
     "console": "docker run --network host --rm -ti rskconsole"
   },
@@ -17,5 +18,11 @@
     "docker"
   ],
   "author": "Kostiantyn Smyrnov <kostysh@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "web3": "^1.0.0-beta.36"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0"
+  }
 }
